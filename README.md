@@ -47,7 +47,7 @@ No se necesita cuenta en Docker Hub: la imagen se construye en local.
 1. Clonar el repositorio:
 
    ```bash
-   git clone URL_DEL_REPOSITORIO
+   git clone https://github.com/AlejoM09/redes-http-grupo04
    cd redes-http-grupo04
    ```
 
