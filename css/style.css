@@ -1,0 +1,64 @@
+:root{
+  --paper:#F2F4F7; --card:#FFFFFF; --ink:#101B2D; --muted:#46556B;
+  --line:#CBD3DE; --teal:#00798C; --teal-dark:#005766; --code:#101B2D;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:1.0625rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+a{color:var(--teal-dark); text-underline-offset:3px}
+a:hover{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal); outline-offset:3px; border-radius:2px}
+.wrap{max-width:68rem; margin:0 auto; padding:0 1.25rem}
+
+header.site{border-bottom:1px solid var(--line); background:var(--card)}
+header.site .wrap{display:flex; flex-wrap:wrap; gap:.75rem 2rem; align-items:center; justify-content:space-between; padding-top:.9rem; padding-bottom:.9rem}
+header.site strong{font:700 1.05rem Georgia,"Times New Roman",serif}
+header.site nav ul{display:flex; flex-wrap:wrap; gap:.25rem 1.4rem; list-style:none; margin:0; padding:0; max-width:none}
+header.site nav li{margin:0}
+header.site nav a{text-decoration:none; color:var(--ink); font-weight:500}
+header.site nav a:hover{color:var(--teal); text-decoration:underline}
+
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif; line-height:1.15; margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.3rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,3vw,2rem); margin-top:0}
+h3{font-size:1.2rem}
+p{margin:0 0 1em; max-width:68ch}
+
+.hero{display:grid; grid-template-columns:1.1fr .9fr; gap:2.5rem; align-items:center; padding:3.5rem 0 3rem}
+.hero .lead{font-size:1.2rem; color:var(--muted)}
+.hero img{width:100%; height:auto; display:block}
+
+section.block{padding:2.75rem 0; border-top:1px solid var(--line)}
+ul,ol{max-width:68ch; padding-left:1.3rem}
+li{margin-bottom:.4rem}
+
+.table-scroll{overflow-x:auto; margin:1rem 0 1.5rem}
+table{border-collapse:collapse; width:100%; min-width:30rem; background:var(--card)}
+th,td{text-align:left; padding:.6rem .8rem; border:1px solid var(--line); vertical-align:top}
+th{background:#E4EAF1}
+caption{text-align:left; font-weight:600; padding-bottom:.4rem}
+
+pre{background:var(--code); color:#E6EDF5; padding:1rem 1.2rem; border-radius:6px; overflow-x:auto; font-size:.95rem; line-height:1.5}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.92em}
+p code,li code,td code{background:#E4EAF1; padding:.1em .35em; border-radius:3px}
+
+.miembros{list-style:none; padding:0; max-width:none; margin:0}
+.miembros li{display:grid; grid-template-columns:5.5rem 1fr; gap:1.25rem; padding:1.25rem 0; border-top:1px solid var(--line); margin:0}
+.miembros li:first-child{border-top:0}
+.miembros img{width:5.5rem; height:5.5rem; border-radius:50%}
+.miembros h3{margin-bottom:.2em}
+
+.perfil{display:grid; grid-template-columns:12rem 1fr; gap:2.5rem; padding:3rem 0}
+.perfil img{width:12rem; height:12rem; border-radius:50%}
+.volver{display:inline-block; margin-top:1rem}
+
+footer.site{border-top:1px solid var(--line); background:var(--card); padding:1.5rem 0; color:var(--muted); font-size:.95rem}
+footer.site p{margin:0 0 .3rem; max-width:none}
+
+@media (max-width:52rem){
+  .hero,.perfil{grid-template-columns:1fr; gap:1.75rem}
+  .perfil img{width:8rem; height:8rem}
+}

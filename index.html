@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grupo 04 – Laboratorio HTTP</title>
+  <meta name="description" content="Micrositio del grupo 04 para el curso Internet: redes y comunicaciones IP (Universidad de Ibagué).">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <strong>Grupo 04 – Laboratorio HTTP</strong>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#curso">El curso</a></li>
+          <li><a href="#http">HTTP</a></li>
+          <li><a href="#integrantes">Integrantes</a></li>
+          <li><a href="#replicar">Replicar el sitio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" aria-labelledby="titulo">
+        <div>
+          <h1 id="titulo">Capa 7: así llega una página web a tu navegador</h1>
+          <p class="lead">Este sitio está hecho solo con HTML, vive en un repositorio de GitHub y se levanta en cualquier computador con un contenedor de Docker. Es el laboratorio de HTTP del curso <em>Internet: redes y comunicaciones IP</em>.</p>
+          <p>Somos el grupo 04: Alejandro Marín Aguilar, Misael Gallo Tangarife y Nelson Garzón Soleto, estudiantes de la Universidad de Ibagué.</p>
+        </div>
+        <img src="img/osi-capas.svg" alt="Las 7 capas del modelo OSI, con la capa 7 de aplicación resaltada">
+      </section>
+
+      <section class="block" id="curso" aria-labelledby="h-curso">
+        <h2 id="h-curso">El curso</h2>
+        <p><strong>Internet: redes y comunicaciones IP</strong> es una electiva profesional que explica cómo funciona la arquitectura de Internet, desde los modelos OSI y TCP/IP hasta los protocolos con los que usamos la web todos los días. Los conceptos se practican en laboratorios con Packet Tracer, Wireshark y máquinas virtuales con Linux.</p>
+        <ul>
+          <li><strong>Unidad 1, modelos de referencia:</strong> OSI y TCP/IP, cableado estructurado, capa física y acceso al medio.</li>
+          <li><strong>Unidad 2, capa de Internet:</strong> IPv4 e IPv6, planes de direccionamiento y enrutamiento estático y dinámico (RIPv2 y OSPFv2).</li>
+          <li><strong>Unidad 3, transporte y aplicación:</strong> TCP, UDP, DNS y HTTP/HTTPS. Este laboratorio pertenece a esta unidad.</li>
+        </ul>
+      </section>
+
+      <section class="block" id="http" aria-labelledby="h-http">
+        <h2 id="h-http">HTTP en pocas líneas</h2>
+        <p>HTTP (Protocolo de Transferencia de Hipertexto) funciona en la capa de aplicación con un esquema de pregunta y respuesta: el cliente pide un recurso y el servidor contesta. Por debajo usa TCP, y cuando se añade cifrado con TLS se llama HTTPS.</p>
+        <ol>
+          <li>El navegador resuelve el nombre del sitio a una dirección IP con DNS.</li>
+          <li>Abre una conexión TCP con el servidor, normalmente al puerto 80 (HTTP) o 443 (HTTPS).</li>
+          <li>Envía una petición con un método, una ruta y unas cabeceras.</li>
+          <li>El servidor responde con un código de estado, cabeceras y el contenido, por ejemplo un archivo HTML.</li>
+          <li>El navegador interpreta el HTML y pide los demás recursos que necesite: hojas de estilo, imágenes y otros archivos.</li>
+        </ol>
+
+        <h3>Una petición y su respuesta</h3>
+<pre><code>GET /index.html HTTP/1.1
+Host: localhost:8001
+Accept: text/html
+
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: text/html
+Content-Length: 5120</code></pre>
+
+        <div class="table-scroll">
+          <table>
+            <caption>Métodos HTTP más usados</caption>
+            <thead><tr><th scope="col">Método</th><th scope="col">Para qué sirve</th></tr></thead>
+            <tbody>
+              <tr><td><code>GET</code></td><td>Pedir un recurso, como una página o una imagen.</td></tr>
+              <tr><td><code>POST</code></td><td>Enviar datos al servidor, por ejemplo un formulario.</td></tr>
+              <tr><td><code>PUT</code></td><td>Reemplazar un recurso existente.</td></tr>
+              <tr><td><code>DELETE</code></td><td>Eliminar un recurso.</td></tr>
+              <tr><td><code>HEAD</code></td><td>Pedir solo las cabeceras, sin el contenido.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <caption>Códigos de estado frecuentes</caption>
+            <thead><tr><th scope="col">Código</th><th scope="col">Significado</th></tr></thead>
+            <tbody>
+              <tr><td><code>200</code></td><td>OK: la petición salió bien.</td></tr>
+              <tr><td><code>301</code></td><td>El recurso cambió de dirección de forma permanente.</td></tr>
+              <tr><td><code>404</code></td><td>El recurso no existe en el servidor.</td></tr>
+              <tr><td><code>500</code></td><td>Error interno del servidor.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block" id="integrantes" aria-labelledby="h-int">
+        <h2 id="h-int">Integrantes del grupo 04</h2>
+        <ul class="miembros">
+          <li>
+            <img src="img/avatar-alejandro.svg" alt="Avatar de Alejandro Marín Aguilar">
+            <div>
+              <h3>Alejandro Marín Aguilar</h3>
+              <p>Estudiante de octavo semestre de Ingeniería de Sistemas. Le interesa el desarrollo de software y trabajar en equipo.</p>
+              <a href="integrantes/alejandro.html">Ver su página</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/avatar-misael.svg" alt="Avatar de Misael Gallo Tangarife">
+            <div>
+              <h3>Misael Gallo Tangarife</h3>
+              <p>Estudiante de la Universidad de Ibagué que disfruta construir proyectos de software en equipo.</p>
+              <a href="integrantes/misael.html">Ver su página</a>
+            </div>
+          </li>
+          <li>
+            <img src="img/avatar-nelson.svg" alt="Avatar de Nelson Garzón Soleto">
+            <div>
+              <h3>Nelson Garzón Soleto</h3>
+              <p>Estudiante de la Universidad de Ibagué que disfruta construir proyectos de software en equipo.</p>
+              <a href="integrantes/nelson.html">Ver su página</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="block" id="replicar" aria-labelledby="h-rep">
+        <h2 id="h-rep">Cómo replicar este sitio</h2>
+        <p>Con Git y Docker instalados, estos tres comandos levantan el sitio en cualquier máquina:</p>
+<pre><code>git clone URL_DEL_REPOSITORIO
+cd redes-http-grupo04
+docker compose up -d --build</code></pre>
+        <p>Después abre <a href="http://localhost:8001">http://localhost:8001</a> en el navegador. Las instrucciones completas están en el archivo <code>README.md</code> del repositorio.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p>Internet: redes y comunicaciones IP – Universidad de Ibagué, 2026B. Docente: Daniel Palomo.</p>
+      <p>Actividad práctica de la capa 7 del modelo OSI.</p>
+    </div>
+  </footer>
+</body>
+</html>
